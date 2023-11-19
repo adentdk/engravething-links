@@ -12,7 +12,7 @@ export default async function Page() {
             src="https://firebasestorage.googleapis.com/v0/b/engravethingid.appspot.com/o/assets%2Fcropped-EngraveThing-1-270x270.png?alt=media&token=4a59f11c-176a-4335-9ea8-f74ec778e3f0"
             alt="Engravething ID" width={100} height={100} />
         </div>
-        <span className="font-bold text-lg text-neutral-100 drop-shadow-md shadow-white">“Kami grafir apapun yang kamu mau”</span>
+        <span className="font-bold text-lg text-white drop-shadow-md shadow-slate-300 text-center">“Kami grafir apapun yang kamu mau”</span>
       </div>
       <div className="flex flex-col gap-2">
         {links.map((link, linkIndex) => (
