@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+Disallow: /z/
+Sitemap: https://engravething.my.id/sitemap.xml
