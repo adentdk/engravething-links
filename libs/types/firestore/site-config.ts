@@ -7,6 +7,13 @@ export type SiteConfigType = {
 export type SiteLinkType = {
   title: string
   url: string
+  color?: string
+}
+
+export type ShopLinkType = {
+  label: string
+  url: string
+  color?: string
 }
 
 export type SiteProductType = {
@@ -15,4 +22,5 @@ export type SiteProductType = {
   images: string[]
   groups: string[]
   shortDescription: string
+  shopLinks: ShopLinkType[]
 }

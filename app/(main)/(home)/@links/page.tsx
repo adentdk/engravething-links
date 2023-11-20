@@ -15,6 +15,7 @@ export default async function Page() {
             eventValue={link.title}
             href={link.url}
             title={link.title}
+            color={link.color}
           />
         ))}
       </div>

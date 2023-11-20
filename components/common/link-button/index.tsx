@@ -1,6 +1,7 @@
 'use client'
 
 import { sendGTMEvent } from "@next/third-parties/google";
+import classNames from "classnames";
 import Link from "next/link";
 import { useCallback } from "react";
 
@@ -12,7 +13,7 @@ type Props = {
   eventValue?: string | number
 }
 
-export default function LinkButton({ title, href, color = 'info', eventName, eventValue }: Props) {
+export default function LinkButton({ title, href, color, eventName, eventValue }: Props) {
   const target = href.startsWith('#') ? undefined : '_blank';
 
   const handleButtonClick = useCallback<React.MouseEventHandler<HTMLAnchorElement>>((e) => {
@@ -37,7 +38,11 @@ export default function LinkButton({ title, href, color = 'info', eventName, eve
     >
       <button
         type="button"
-        className={`btn btn-${color} btn-outline btn-block`}>
+        style={color ? {
+          color: `${color} !important`,
+          borderColor: `${color} !important`,
+        } : {}}
+        className={classNames(`btn btn-info btn-block`)}>
         {title}
       </button>
     </Link>

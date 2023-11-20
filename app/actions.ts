@@ -31,6 +31,7 @@ export const getLinks = async (): Promise<SiteLinkType[]> => {
     return {
       url: linkData.url,
       title: linkData.title,
+      color: linkData.color,
     }
   });
 
@@ -46,14 +47,15 @@ export const getSelectedProducts = async (): Promise<SiteProductType[]> => {
     .limit(10)
     .get();
 
-  const documents = snapshot.docs.map((link) => {
-    const linkData = link.data();
+  const documents = snapshot.docs.map((product) => {
+    const data = product.data();
     return {
-      title: linkData.title,
-      slug: linkData.slug,
-      images: linkData.images,
-      groups: linkData.groups,
-      shortDescription: linkData.short_description
+      title: data.title,
+      slug: data.slug,
+      images: data.images,
+      groups: data.groups,
+      shortDescription: data.short_description,
+      shopLinks: data.shop_links || [],
     }
   });
 
