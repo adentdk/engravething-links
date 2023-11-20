@@ -1,3 +1,6 @@
+'use client'
+
+import { sendGTMEvent } from "@next/third-parties/google";
 import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,6 +9,11 @@ import { SiteProductType } from "~/libs/types";
 type ProductCardProps = SiteProductType & {}
 
 export default function ProductCard({ images, title, shopLinks, shortDescription, slug }: ProductCardProps) {
+  const handleShopLinkClicked = (linkName: string, productSlug: string) => () => {
+    sendGTMEvent({
+      event: 'shop-link-clicked', value: `${linkName}-${productSlug}`
+    })
+  }
   return (
     <div className="card card-compact shadow-xl rounded-none sm:rounded-box glass" >
       <figure className="relative h-52 overflow-hidden">
@@ -23,6 +31,7 @@ export default function ProductCard({ images, title, shopLinks, shortDescription
               style={{
                 color: shopLink.color,
               }}
+              onClick={handleShopLinkClicked(shopLink.label, slug)}
               className={classNames(
                 'badge badge-outline',
                 'badge-neutral'

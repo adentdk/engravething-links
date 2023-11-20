@@ -1,6 +1,3 @@
-import classNames from "classnames"
-import Image from "next/image"
-import Link from "next/link"
 import { getSelectedProducts } from "~/app/actions"
 import ProductCard from "~/components/common/product-card"
 

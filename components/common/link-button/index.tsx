@@ -42,7 +42,7 @@ export default function LinkButton({ title, href, color, eventName, eventValue }
           color: `${color} !important`,
           borderColor: `${color} !important`,
         } : {}}
-        className={classNames(`btn btn-info btn-block`)}>
+        className={classNames(`btn btn-block glass`)}>
         {title}
       </button>
     </Link>
