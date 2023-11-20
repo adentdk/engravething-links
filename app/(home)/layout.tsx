@@ -1,4 +1,5 @@
 import { GoogleTagManager } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function Layout(props: {
   children: React.ReactNode;
@@ -21,6 +22,7 @@ export default function Layout(props: {
         {props.selectedProducts}
       </main>
       <GoogleTagManager gtmId="G-FW5V8QG2NN" />
+      <Analytics />
     </>
   )
 }
