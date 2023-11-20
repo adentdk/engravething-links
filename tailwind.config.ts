@@ -12,6 +12,17 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      color: {
+        "primary": "#38B6FF",
+        "secondary": "#93c5fd",
+        "accent": "#2dd4bf",
+        "neutral": "#d1d5db",
+        "base": "#ffffff",
+        "info": "#bae6fd",
+        "success": "#86efac",
+        "warning": "#fef08a",
+        "error": "#fecaca",
+      },
     },
   },
   daisyui: {
