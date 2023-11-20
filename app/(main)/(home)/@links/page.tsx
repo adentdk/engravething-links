@@ -1,6 +1,8 @@
 import { getLinks } from "~/app/actions"
 import LinkButton from "~/components/common/link-button"
 
+export const revalidate = 600
+
 export default async function Page() {
   const links = await getLinks()
   return (

@@ -3,6 +3,8 @@ import { getSiteConfig } from "../actions"
 import { GoogleTagManager } from "@next/third-parties/google"
 import { Analytics } from "@vercel/analytics/react"
 
+export const revalidate = 1200
+
 export async function generateMetadata(): Promise<Metadata> {
   const { title, description } = await getSiteConfig()
   return {

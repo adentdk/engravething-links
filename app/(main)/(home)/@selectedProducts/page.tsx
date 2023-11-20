@@ -1,6 +1,8 @@
 import Image from "next/image"
 import { getSelectedProducts } from "~/app/actions"
 
+export const revalidate = 600
+
 export default async function Page() {
   const products = await getSelectedProducts()
   return (
