@@ -9,7 +9,7 @@ export default async function Page() {
         {links.map((link, linkIndex) => (
           <LinkButton
             key={['Link', linkIndex].join('-')}
-            eventName="MainLinkClicked"
+            eventName="main_i"
             eventValue={link.title}
             href={link.url}
             title={link.title}

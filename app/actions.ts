@@ -42,7 +42,7 @@ export const getSelectedProducts = async (): Promise<SiteProductType[]> => {
   const firestore = getFirestore()
   const snapshot = await firestore
     .collection("products")
-    .where('groups', 'array-contains', 'selected-products')
+    .where('groups', 'array-contains', 'selected-product')
     .limit(10)
     .get();
 
@@ -51,7 +51,7 @@ export const getSelectedProducts = async (): Promise<SiteProductType[]> => {
     return {
       title: linkData.title,
       slug: linkData.slug,
-      images: linkData.image,
+      images: linkData.images,
       groups: linkData.groups,
       shortDescription: linkData.short_description
     }
