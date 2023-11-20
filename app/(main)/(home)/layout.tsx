@@ -1,6 +1,3 @@
-import { GoogleTagManager } from "@next/third-parties/google";
-import { Analytics } from "@vercel/analytics/react";
-
 export default function Layout(props: {
   children: React.ReactNode;
   carousel: React.ReactNode;
@@ -9,22 +6,20 @@ export default function Layout(props: {
 }) {
   return (
     <>
-      <main>
-        <section className="hero min-h-screen" style={{
+      <section
+        className="hero min-h-screen"
+        style={{
           backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/engravethingid.appspot.com/o/assets%2Fhero-1.webp?alt=media&token=6e05bbb0-5a7a-458c-a68a-402ddbbad492)'
         }}>
-          <div className="hero-overlay bg-gradient-radial from-transparent to-black backdrop-blur-sm bg-black/50"></div>
-          <div className="hero-content flex-col gap-4 w-full">
-            {props.children}
-            {props.links}
-            {props.carousel}
-          </div>
-        </section>
+        <div className="hero-overlay bg-gradient-radial from-transparent to-black backdrop-blur-sm bg-black/50"></div>
+        <div className="hero-content flex-col gap-4 w-full">
+          {props.children}
+          {props.links}
+          {props.carousel}
+        </div>
+      </section>
 
-        {props.selectedProducts}
-      </main>
-      <GoogleTagManager gtmId="G-FW5V8QG2NN" />
-      <Analytics />
+      {props.selectedProducts}
     </>
   )
 }
