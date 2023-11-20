@@ -11,14 +11,12 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-export default async function MainLayout({
-  children,
-}: {
+export default async function MainLayout(props: {
   children: React.ReactNode
 }) {
   return (
     <>
-      <main>{children}</main>
+      <main>{props.children}</main>
       <GoogleTagManager gtmId="G-FW5V8QG2NN" />
       <Analytics />
     </>
